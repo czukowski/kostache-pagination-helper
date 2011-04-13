@@ -33,7 +33,7 @@ Notes:
 
 * The `config` parameter `kostache` is an instance of `Kostache` class, i.e. your view model.
 * The `config` parameter `partial` is the name of partial you use in your template file, e.g. you can pass `'pagination'`, if you have
-  `{{#pagination}}{{>pagination}}{{/pagination}}` in your template. That will also be the name of your view method (see below).
+  `{{>pagination}}` in your template. That will also be the name of your view method (see below).
 * If you pass both of the above parameters to pagination constructor, the partial will be automatically added to your view model.
 * You don't have to specify `view` parameter as `'pagination/basic'`, since it is Pagination default value.
 
@@ -47,6 +47,8 @@ View file continued:
 
 Notes:
 
+* The method name is the same as a section name you use in your template, for instance if you have `pagination()` method, you need the
+  following section in the template: `{{#pagination}}{{> ... }}{{/pagination}}`. The partial name doesn't have to match the section name.
 * Here you just set `total_items` property of pagination and call `render()` method. It doesn't actually render view to a string,
   but rather returns an array to your view, for use in the appropriate template partial.
 * You'd replace `$this->_get_data_count()` with your own method call, that returns items count.
