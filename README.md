@@ -31,12 +31,12 @@ In your view file:
 
 Notes:
 
-* The config parameter `kostache` (optional) is an instance of `Kostache` class, i.e. your view model.
-* The config parameter `partial` (optional, although if you set one of these, you should also set the other, otherwise it makes no sense)
-  is the name of partial you use in your template file, e.g. you can pass `'pagination'`, if you have `{{>pagination}}` in your template.
-  That will also be the name of your view method (see below).
-* If you pass both of the above parameters to pagination constructor, the partial will be automatically added to your view model.
-* You don't have to set `view` parameter to `'pagination/basic'`, as it is Pagination default value.
+ * The config parameter `kostache` (optional) is an instance of `Kostache` class, i.e. your view model.
+ * The config parameter `partial` (optional, although if you set one of these, you should also set the other, otherwise it makes no sense)
+   is the name of partial you use in your template file, e.g. you can pass `'pagination'`, if you have `{{>pagination}}` in your template.
+   That will also be the name of your view method (see below).
+ * If you pass both of the above parameters to pagination constructor, the partial will be automatically added to your view model.
+ * You don't have to set `view` parameter to `'pagination/basic'`, as it is Pagination default value.
 
 View file continued:
 
@@ -48,13 +48,13 @@ View file continued:
 
 Notes:
 
-* The method name is the same as a section name you use in your template, for instance if you have `pagination()` method, you need the
-  following section in the template: `{{#pagination}}{{> ... }}{{/pagination}}`. The partial name doesn't have to match the section name.
-* Here you just set `total_items` property of pagination and call `render()` method. It doesn't actually render view to a string,
-  but rather returns an array to your view, for use in the appropriate template partial.
-* You'd replace `$this->_get_data_count()` with your own method call, that returns items count.
-* If items count is known during class construction (i.e. it doesn't depend on any values set by a controller), you, of course, may
-  set it in constructor right away and not do that in `pagination` method.
+ * The method name is the same as a section name you use in your template, for instance if you have `pagination()` method, you need the
+   following section in the template: `{{#pagination}}{{> ... }}{{/pagination}}`. The partial name doesn't have to match the section name.
+ * Here you just set `total_items` property of pagination and call `render()` method. It doesn't actually render view to a string,
+   but rather returns an array to your view, for use in the appropriate template partial.
+ * You'd replace `$this->_get_data_count()` with your own method call, that returns items count.
+ * If items count is known during class construction (i.e. it doesn't depend on any values set by a controller), you, of course, may
+   set it in constructor right away and not do that in `pagination` method.
 
 Alternative usage
 -----------------
@@ -84,20 +84,20 @@ Note, that in this example pagination uses another pagination style (punbb), tha
 Requirements
 ------------
 
-* [KOstache 2](https://github.com/zombor/KOstache)
-* Made for [Kohana 3.1](http://kohanaframework.org), but may work with 3.0
+ * [KOstache 2](https://github.com/zombor/KOstache)
+ * Made for [Kohana 3.1](http://kohanaframework.org), but may work with 3.0
 
 Pagination views
 ----------------
 
 At the moment, the following views are supported out of the box:
 
-* `pagination/basic` (default) - basic pagination:
+ * `pagination/basic` (default) - basic pagination:
 
-  First Previous 1 2 3 4 5 6 7 8 __9__ 10 11 12 13 14 Next Last
+   First Previous 1 2 3 4 5 6 7 8 __9__ 10 11 12 13 14 Next Last
 
-* `pagination/punbb` (default) - pagination like in PunBB (ported from Kohana 2.3.x pagination module):
+ * `pagination/punbb` - pagination like in PunBB (ported from Kohana 2.3.x pagination module):
 
-  Displayed 31-60 of 150
+   Displayed 31-60 of 150
 
-  Pages: 1 … 4 5 __6__ 7 8 … 15
+   Pages: 1 … 4 5 __6__ 7 8 … 15
